@@ -1,0 +1,65 @@
+class queue:
+    def __init__(self):
+        self.list = []
+
+    def Rear(self):
+        return self.list[0]
+
+    def Front(self):
+        return self.list[len(self.list) - 1]
+
+    def Enqueue(self, val):
+        self.list.insert(0, val)
+
+    def Dequeue(self):
+        tmp = self.list[len(self.list) -1]
+        del self.list[len(self.list) -1]
+        return tmp
+
+MyQueue = queue()
+while True:
+    choice = input("Please choose, 1 to enqueue, 2 to dequeue, 3 to view front, 4 to view Rear")
+    if choice == "1":
+        val = input("Please type the value")
+        MyQueue.Enqueue(val)
+    elif choice == "2":
+        print("Value Dequeued is: " + MyQueue.Dequeue())
+    elif choice == "3":
+        print("Front is : " + MyQueue.Front())
+    elif choice == "4":
+        print("Rear is : " + MyQueue.Rear())
+    else:
+        print("Invalid choice please try again")
+
+
+class Stack:
+    def __init__(self):
+        self.list = []
+
+    def pop(self):
+        tmp = self.list[len(self.list)-1]
+        del self.lis[(len(self.list) - 1)]
+        return tmp                               #just holds the variable
+
+    def push(self,val):
+        self.list.append(val)
+
+    def peek(self):
+        return self.list[len(self.list) - 1]
+
+    def size(self):
+        return len(self.list)
+
+MyStack = Stack()
+while True:
+    choice = input("pleae chooose, 1 to push element, 2 to pop, 3 to view size")
+    if choice == "1":
+        val = input("Please type the value")
+        MyStack.push(val)
+    elif choice == "2":
+        print("Value popped is:" + MyStack.pop())
+    elif choice == "3":
+        size = str(MyStack.size())
+        print("Size of stack is: " + size)
+    else:
+        print("invalid choice, please try again")
